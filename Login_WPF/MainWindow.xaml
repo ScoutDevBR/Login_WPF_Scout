@@ -3,32 +3,94 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:Login_WPF"
+        xmlns:local="clr-namespace:Login_WPF" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="Login" Height="760" Width="450"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Background="{x:Null}"
-        AllowsTransparency="True"
-        WindowStyle="None"
-        WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="450" Width="380"
+        AllowsTransparency="True" Background="Transparent"
+		WindowStyle="None" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#73c6b6" Offset="0.0"/>
+                        <GradientStop Color="#0B5345" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
 
 
-    <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" "Margin="25">
-        <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
-            <StackPanel>
-                
-                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0"
-                    PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
-                    
-                        <StackPanel Margin="16 10 0 6" Orientation="Horizontal"
-                         HorizontalAlignment="Center">
-                            <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
-                    
-            </StackPanel>        
-                </materialDesign:PopupBox>
-                
-                
-                
-    </materialDesign:Card>
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="Logo.png" Width="80"/>
+                <TextBlock Text="Dock Code"
+							FontWeight="Light"
+							FontFamily="helvetica"
+							FontSize="22"
+							Foreground="White"
+							HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBox FontFamily="Helvetica"
+                         FontWeight="Light"        
+                         Text="Username"
+                         FontSize="20"                 
+                         Foreground="White"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Width="235"
+                         HorizontalContentAlignment="Left"
+                         Opacity="0.5"
+                         Height="28"
+                         Margin="63,0,0,0"/>
+                    <iconPacks:PackIconMaterial Kind="Account"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"
+                                            Foreground="White"/>
+            </StackPanel>
+
+
+                    <Border Width="250"
+                        Height="2"
+                        Background="White"                        
+                        Opacity="0.5"/>
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <PasswordBox FontFamily="Helvetica"
+                         FontWeight="Light"        
+                         Password="Password"
+                         FontSize="20"                 
+                         Foreground="White"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Width="235"
+                         HorizontalContentAlignment="Left"
+                         Opacity="0.5"
+                         Height="28"
+                         Margin="63,0,0,0" Cursor="IBeam"/>
+                        <iconPacks:PackIconMaterial Kind="TextboxPassword"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"
+                                            Foreground="White"/>
+                    </StackPanel>
+
+                        <Border Width="250"
+                        Height="2"
+                        Background="White"                        
+                        Opacity="0.5"/>
+
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
 </Window>
